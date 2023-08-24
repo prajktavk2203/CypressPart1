@@ -7,7 +7,7 @@ describe('Verify the Ragistration page', () =>
 
         cy.get('button[type="submit"]').should("be.disabled")
         cy.get('#name').type("Prajkta").should("have.value","Prajkta")
-        cy.get('input[name="email"]').type("test@gmail.com").should("have.value","test@gmail.com")
+        cy.get('input[name="email"]').type("cytest4@gmail.com").should("have.value","cytest4@gmail.com")
         cy.get('#password').type("test@123").should("have.value","test@123")
 
         //It will throw an error - click() can click on only single element
@@ -33,6 +33,20 @@ describe('Verify the Ragistration page', () =>
         //or find the direct x-path/ css selector to select the radio button
         cy.get('input[value="Female"]').click()
 
+
+        //handling Dropdown - with select tags
+        //Select tag by - value
+        cy.get('#state').select('Andhra Pradesh')
+        //select tag by - name
+        cy.get('#state').select('Goa')
+        //select tag by - index
+        cy.get('#state').select(15).should("have.value","Maharashtra")
+
+        //check whether sign Up buttone is enabled or not
+        cy.get('button[type="submit"]').should("be.enabled").click()
+
+
+       
     
     });
 });
