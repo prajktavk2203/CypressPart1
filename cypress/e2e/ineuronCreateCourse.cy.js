@@ -23,6 +23,9 @@ describe('Create Course', () =>
         //click on add new course button
         cy.contains('Add New Course').click({force:true})
 
+        //click on file upload button
+        cy.get('#thumbnail').attachFile('Cypress1.png')
+
         
     });
 });
