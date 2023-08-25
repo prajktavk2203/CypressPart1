@@ -7,7 +7,7 @@ describe('Verify the Ragistration page', () =>
 
         cy.get('button[type="submit"]').should("be.disabled")
         cy.get('#name').type("Prajkta").should("have.value","Prajkta")
-        cy.get('input[name="email"]').type("cytest3@gmail.com").should("have.value","cytest3@gmail.com")
+        cy.get('input[name="email"]').type("cytest4@gmail.com").should("have.value","cytest4@gmail.com")
         cy.get('#password').type("test@123").should("have.value","test@123")
 
         //It will throw an error - click() can click on only single element
@@ -46,13 +46,11 @@ describe('Verify the Ragistration page', () =>
          cy.get('button[type="submit"]').should("be.enabled").click()
 
          //If email already registered 
-         cy.contains('Email already registered!')
+         //cy.contains('Email already registered!')
 
        
-
-
         //Ligin with registered user
-        cy.get("input[name='email1']").type("cytest3@gmail.com").should("have.value","cytest3@gmail.com")
+        cy.get("input[name='email1']").type("cytest4@gmail.com").should("have.value","cytest4@gmail.com")
         cy.get("input[name='password1']").type("test@123").should("have.value","test@123")
         cy.get("button[type='submit']").should("be.enabled").click()
 
